@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/recursos/librerias/bootstrap5.1.3/bootstrap.min.js"></script>
+    <script src="/recursos/librerias/chartJs/chart.min.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="/recursos/librerias/bootstrap5.1.3/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="/">
+    <title>Graficas</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center">Herramienta para graficar</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row contenedor">
+            <!--Ingreso de datos-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-primary" type="button" id="button-addon2">Agregar</button>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-select" name="grafico" id="tipoGrafico">
+                        <option value="barras">Barras</option>
+                    </select>
+                </div>
+            </div>
+            <!--Tabla de datos-->
+            <div class="col-md-6">
+                <h2>Datos</h2>
+                <div class="row tablaContenedor">
+                    <table class="table">
+                        <tr>
+                            <th>dato</th>
+                            <th>valor</th>
+                        </tr>
+                        <tr>
+                            <td>ejemplo</td>
+                            <td>12</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!--Grafica de datos-->
+            <div class="col-md-6">
+                <h2>Grafica</h2>
+                <div class="row d-inline">
+                    <canvas id="grafica"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="float-bottom">
+        <h3>Acerca de esta aplicación y su desarrollo</h3>
+        <p>Hola soy Williams Andrés parra
+            programe esta herramienta para ser utilizada por todo aquel que la necesite y que pueda sacarle provecho
+            no dudes en utilizarla o revisar su código fuente.
+            Te gusta mi trabajo, crees que puedo mejorar o quieres dejarme cualquier comentario no dudes en contactarme
+            estas son mis redes.</p>
+        <a href="https://www.linkedin.com/in/williams-parra-8a79ab211/" target="_blank">Linkedin</a>
+    </footer>
+</body>
+
+</html>
