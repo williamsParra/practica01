@@ -1,2 +1,2 @@
 # practica01
-practica de html css y js
+aplicacion de prueba con html css y js
