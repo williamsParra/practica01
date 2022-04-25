@@ -17,16 +17,19 @@ const COLORES = [
 const TIPO_GRAFICOS = [
   { nombre: "Barras", tipo: "bar" },
   { nombre: "Dona", tipo: "doughnut" },
+  { nombre: "Pie", tipo: "pie" },
+  { nombre: "Lineas", tipo: "line" },
+  { nombre: "Burbujas", tipo: "bubble" },
 ];
 
-const crearGrafica = (canvas2D, etiquetas, datos) => {
-  const myChart = new Chart(canvas2D, {
-    type: "doughnut",
+const crearGrafica = (canvas2D, etiquetas, datos, tipoGrafico) => {
+  const Grafica = new Chart(canvas2D, {
+    type: tipoGrafico,
     data: {
       labels: etiquetas,
       datasets: [
         {
-          label: "# of Votes",
+          label: "Grafico",
           data: datos,
           backgroundColor: COLORES,
           borderColor: "#000",
@@ -50,6 +53,26 @@ const crearGrafica = (canvas2D, etiquetas, datos) => {
       },
     },
   });
+
+  return Grafica;
 };
 
-export { crearGrafica };
+const agregarDatosGrafico = (grafica, etiqueta, dato) => {
+  grafica.data.labels.push(etiqueta);
+  //grafica.data.datasets.data.push(dato);
+  grafica.data.datasets.forEach((dataset) => {
+    dataset.data.push(dato);
+  });
+  grafica.update();
+};
+
+const cambiarGrafico = (grafica,tipoGrafico)=>{
+  grafica.config.type=tipoGrafico;  
+  grafica.update();
+
+};
+
+
+
+
+export { TIPO_GRAFICOS, crearGrafica, agregarDatosGrafico , cambiarGrafico };
